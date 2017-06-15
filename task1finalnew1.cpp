@@ -3,6 +3,7 @@
 #include<string>
 #include<bits/stdc++.h>
 #include<fstream>
+#include<ctype.h>
 using namespace std;
 int flag=0;
 int x=0;
@@ -30,7 +31,7 @@ void KMPsearch(string s,vector<string> Pagestring )
 				
 			}
 			if(q==m)
-			{
+			{    if(!isalpha((*i)[p-q-1])&&!isalpha((*i)[p-q+m]))
 				cout<<"page:"<<global<<','<<"line:"<<x<<endl;
 				flag=1;
 				q=ps[q-1];
